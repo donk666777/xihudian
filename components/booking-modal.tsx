@@ -5,7 +5,7 @@ import { useBooking } from './booking-context';
 
 export function BookingModal() {
   const { isOpen, close } = useBooking();
-  const firstFieldRef = useRef<HTMLInputElement>(null);
+  const firstFieldRef = useRef<HTMLSelectElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
@@ -52,9 +52,9 @@ export function BookingModal() {
           </div>
         ) : (
           <form onSubmit={submit}>
-            <div className="form-row"><label htmlFor="name">你的称呼</label><input ref={firstFieldRef} id="name" name="name" required placeholder="比如：小林" /></div>
+            <div className="form-row"><label htmlFor="time">希望到店时间</label><select ref={firstFieldRef} id="time" name="time" defaultValue="今天 10:00 — 12:00"><option>今天 10:00 — 12:00</option><option>今天 14:00 — 16:00</option><option>明天 10:00 — 12:00</option><option>明天 14:00 — 16:00</option></select></div>
+            <div className="form-row"><label htmlFor="name">你的称呼</label><input id="name" name="name" required placeholder="比如：小林" /></div>
             <div className="form-row"><label htmlFor="pet">毛孩子的名字</label><input id="pet" name="pet" required placeholder="比如：MOMO" /></div>
-            <div className="form-row"><label htmlFor="time">希望到店时间</label><select id="time" name="time" defaultValue="今天 10:00 — 12:00"><option>今天 10:00 — 12:00</option><option>今天 14:00 — 16:00</option><option>明天 10:00 — 12:00</option><option>明天 14:00 — 16:00</option></select></div>
             <button className="button form-submit" type="submit">提交预约 <span className="arrow">↗</span></button>
           </form>
         )}
