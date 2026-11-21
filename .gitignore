@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+dist/
+build/
+
+# Legacy static export files (the app uses app/ and public/)
+/index.html
+/assets/
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Test and coverage output
+coverage/
+playwright-report/
+test-results/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Logs and local tool output
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local visual QA screenshots (not production assets)
+/mobile-check.png
+/momo-desktop.png
+/momo-mobile.png
+/space-section-check.png
